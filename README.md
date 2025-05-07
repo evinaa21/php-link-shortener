@@ -1,6 +1,6 @@
 # PHP Link Shortener — Junior PHP Developer Test Task
 
-Welcome! This is a simple PHP project made for a junior developer test. It lets you create a short link using some parameters, and then you can look up the original info later using a special code.
+This mini-project lets you create a short link using some parameters, and then you can look up the original info later using a special code.
 
 ---
 
@@ -118,4 +118,4 @@ curl "http://localhost/Task_Internship/retrieve.php?our_param=YOUR_PARAM"
 
 ---
 
-_Made as a beginner PHP project for a junior developer test task!_
+_Made for a junior developer test task!_

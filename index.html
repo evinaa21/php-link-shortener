@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale-1.0" />
+    <title>Link Shortener</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Link Shortener</h1>
+      <form action="redirect.php" method="GET">
+        <label
+          >Keyword:
+          <input
+            type="text"
+            name="keyword"
+            placeholder="Enter Keyword" /></label
+        ><br />
+        <label
+          >Source:
+          <input type="text" name="src" placeholder="Enter Source" /></label
+        ><br />
+        <label
+          >Creative:
+          <input
+            type="text"
+            name="creative"
+            placeholder="Enter Creative" /></label
+        ><br />
+        <label
+          ><input type="checkbox" name="refresh" value="1" /> Refresh
+          our_param</label
+        ><br />
+        <button type="submit">Generate Link</button>
+      </form>
+      <br />
+      <form action="retrieve.php" method="GET">
+        <label
+          >our_param:
+          <input type="text" name="our_param" placeholder="Enter our_param"
+        /></label>
+        <button type="submit">Retrieve Original</button>
+      </form>
+      <div id="retrieve-result" style="margin-top: 20px"></div>
+    </div>
+    <script>
+      document.querySelector('form[action="retrieve.php"]').onsubmit =
+        async function (e) {
+          e.preventDefault();
+          const param = this.our_param.value;
+          const res = await fetch(
+            "retrieve.php?our_param=" + encodeURIComponent(param)
+          );
+          const data = await res.json();
+          document.getElementById("retrieve-result").innerText = JSON.stringify(
+            data,
+            null,
+            2
+          );
+        };
+    </script>
+  </body>
+</html>

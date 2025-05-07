@@ -1,0 +1,2 @@
+# This file stores the history of refreshed mappings in the format:
+# old_param new_param 

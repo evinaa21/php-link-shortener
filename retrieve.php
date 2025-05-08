@@ -100,8 +100,4 @@ if (!$found) {
     http_response_code(404);
     echo json_encode(["error" => "our_param not found"]);
 }
-
-// Redirect to another website with the our_param
-header("Location: https://other-website.com?our_param=$our_param");
 exit;
-?>
